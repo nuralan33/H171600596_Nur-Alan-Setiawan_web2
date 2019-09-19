@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('login', 'HomeController@myCaptcha')->name('myCaptcha');
+Route::post('login', 'HomeController@myCaptchaPost')->name('myCaptcha.post');
+Route::get('refresh_captcha', 'HomeController@refreshCaptcha')->name('refresh_captcha');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

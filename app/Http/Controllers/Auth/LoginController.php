@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -17,7 +18,22 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+    protected function validator(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+            'captcha' => 'required|captcha',    
+        ]);
+    }
 
+   
+    public function refreshCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
+    }
+
+   
     use AuthenticatesUsers;
 
     /**
@@ -25,8 +41,12 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
+   
 
+
+    
+    
     /**
      * Create a new controller instance.
      *
@@ -34,6 +54,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        //$this->middleware('guest')->except('logout');
     }
 }
+?>
