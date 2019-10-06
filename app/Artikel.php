@@ -9,6 +9,6 @@ class Artikel extends Model
     protected $table ='artikel'; 
     
     protected $fillable = [
-        'nama','users_id',
+        'judul','isi','users_id','Kategori_Artikel_id',
     ];
 }

@@ -5,29 +5,32 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center">Dashboard</div>
-                <div class="card-body text-center">
-             
-<body >
-		<table border="1 ">
-		<tittle>Artikel</tittle>
-			<tr>
-				<td>Id</td>
-				<td>Nama</td>
-				<td>Users id</td>
-
-
-              </div>
-             </div>
-            </div>
-
-
-			</tr>
+			<a href="{!! route('Artikel.create')!!}" class="btn btn-primary">{{('Tambah Data')}}</a>
+                <div class="col text-center">
+                <table class="table table-bordered">
+                    <thead class ="bg-success">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">judul</th>
+                                <th scope="col">isi</th>
+                                <th scope="col">User_id</th>
+                                <th scope="col">Create</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+		
 		@foreach($Artikel as $item)
 		<tr>
 			<td>{!! $item->id !!}</td>
-			<td>{!! $item->nama !!}</td>
+			<td>{!! $item->judul !!}</td>
+			<td>{!! $item->isi !!}</td>
 			<td>{!! $item->users_id !!}</td>
+			<td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
+			<td>
+                            <a href ="{!! route('Artikel.show',[$item-> id]) !!}" button class="btn btn-danger" type="button"> Hapus </button></a> 
+                            <a href="{!! route('Artikel.show',[$item-> id]) !!}" button class="btn btn-success">Lihat</a>
+                        </td>
 		</tr>
 	
 		@endforeach

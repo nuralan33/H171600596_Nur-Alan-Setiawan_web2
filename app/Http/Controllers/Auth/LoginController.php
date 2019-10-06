@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -27,7 +29,17 @@ class LoginController extends Controller
         ]);
     }
 
-   
+    public function username()
+    {
+        return 'phone';
+    }
+
+    protected function credentials(Request $request)
+    {
+        return $request -> only($this->username(),'password');
+    }
+
+
     public function refreshCaptcha()
     {
         return response()->json(['captcha'=> captcha_img()]);
@@ -41,7 +53,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
    
 
 
@@ -54,7 +66,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('guest')->except('logout');
+        $this->middleware('guest')->except('logout');
     }
 }
 ?>

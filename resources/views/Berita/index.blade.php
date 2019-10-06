@@ -5,34 +5,35 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center">Dashboard</div>
-                <div class="card-body text-center">
-             
-<body >
-		<table border="1 ">
-		<tittle>Berita</tittle>
-			<tr>
-				<td>Id</td>
-				<td>Nama</td>
-				<td>Users id</td>
-
-
-              </div>
-             </div>
-            </div>
-
-
-			</tr>
-		@foreach($Berita as $item)
-		<tr>
-			<td>{!! $item->id !!}</td>
-			<td>{!! $item->nama !!}</td>
-			<td>{!! $item->users_id !!}</td>
-		</tr>
-	
-		@endforeach
-		
-		</table>
-		</div>
-
+                <div class="card-header">Berita</div>
+                <div class="card-body">
+				
+                <a href ="{!! route('berita.create') !!}" button class="btn btn-primary" type="button"> Tambah </button></td></a>
+                <table class="table table-bordered">
+                    <thead class="bg-success">
+                        <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Judul</th>
+                        <th scope="col">Isi</th>
+                        <th scope="col">User_id</th>
+                        <th scope="col">Create</th>
+                        <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach( $berita as $item)
+                        <tr>
+                        <td>{!! $item->id !!}</td>
+                        <td>{!! $item->judul !!}</td>
+                        <td>{!! $item->isi !!}</td>
+                        <td>{!! $item->users_id !!}</td>
+                        <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
+                        <td>
+                            <a href ="index.php?p=tang" button class="btn btn-danger" type="button"> Hapus </button></a> 
+                            <a href="{!! route('berita.show',[$item-> id]) !!}" button class="btn btn-success">Lihat</a>
+                        </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
 		@endsection
