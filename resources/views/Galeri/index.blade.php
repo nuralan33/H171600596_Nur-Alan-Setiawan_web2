@@ -15,7 +15,7 @@
                                 <th scope="col">Nama</th>
                                 <th scope="col">Keterangan</th>
                                 <th scope="col">Path</th>
-                                <th scope="col">Kategori Galeri Id</th>
+                                <th scope="col">Kategori_Galeri_id</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                     </thead>

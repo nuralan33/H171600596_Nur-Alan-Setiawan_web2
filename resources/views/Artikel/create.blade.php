@@ -7,8 +7,8 @@
             <div class="card">
                 <div class="card-header text-center bg-info">Tambah Artikel</div>
              <div class="card-body">   
-             	<form method="post" action="{!! route('Artikel.store') !!}"> 
-             	@include('Artikel.form')
+             	<form method="post" action="{!! route('artikel.store') !!}"> 
+             	@include('artikel.form')
 
              	</form>
             </div>

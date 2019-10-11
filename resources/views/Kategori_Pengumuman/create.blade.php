@@ -8,9 +8,9 @@
                 <div class="card-header bg-info" button class="btn btn-primary">Tambah Kategori Pengumuman</div>
           
                 <div class="card-body">
-                    <form method="post" action="{!! route('KategoriPengumuman.store') !!}">
+                {!! Form::open(['route' => 'KategoriPengumuman.store', 'method' => 'post']) !!}
                         @include('Kategori_Pengumuman.form')
-                    </form>
+                        {!! Form::close() !!}
                 </div>
             </div>
         </div>

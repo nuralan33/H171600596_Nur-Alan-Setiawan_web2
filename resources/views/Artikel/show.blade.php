@@ -37,7 +37,7 @@
                     
                     <div class="form-group row mb-0">
                         <div class="col-md-10 offset-md-2">
-                            <a href="{!! route('Artikel.index')!!}" class="btn btn-primary">
+                            <a href="{!! route('artikel.index')!!}" class="btn btn-primary">
                                 Back
                             </a>
                         </div>

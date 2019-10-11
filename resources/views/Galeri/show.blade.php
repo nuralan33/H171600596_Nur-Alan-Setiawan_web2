@@ -43,7 +43,7 @@
                     
                     <div class="form-group row mb-0">
                         <div class="col-md-10 offset-md-2">
-                            <a hSref="{!! route('galeri.index')!!}" class="btn btn-primary">
+                            <a href="{!! route('galeri.index')!!}" class="btn btn-primary">
                                 Back
                             </a>
                         </div>

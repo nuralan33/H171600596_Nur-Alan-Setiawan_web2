@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-info" button class="btn btn-primary">Tambah Kategori Berita</div>
+                <div class="card-header bg-info" button class="btn btn-primary">Tambah Berita</div>
           
                 <div class="card-body">
-                {!! Form::open(['route' => 'KategoriBerita.store', 'method' => 'post']) !!}
-                        @include('Kategori_Berita.form')
+                    {!! Form::model($berita, ['route' => ['berita.update', $berita->id],'method'=>'patch']) !!}
+                        @include('berita.form')
                         {!! Form::close() !!}
                 </div>
             </div>

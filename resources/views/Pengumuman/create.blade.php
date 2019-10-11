@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header text-center bg-info">Tambah Pengumuman</div>
+                <div class="card-header text-center bg-info">Tambah Artikel</div>
              <div class="card-body">   
              	<form method="post" action="{!! route('pengumuman.store') !!}"> 
              	@include('pengumuman.form')
